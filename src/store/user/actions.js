@@ -32,7 +32,41 @@ export const auctionPostSuccess = (auction) => ({
 
 export const logOut = () => ({ type: LOG_OUT });
 
+export const signUp = (
+  email,
+  password,
+  firstName,
+  lastName,
+  address,
+  phoneNum,
+  isOwner
+) => {
+  return async (dispatch, getState) => {
+    dispatch(appLoading());
+    try {
+      const response = await axios.post(`${apiUrl}/signup`, {
+        email,
+        password,
+        firstName,
+        lastName,
+        address,
+        phoneNum,
+        isOwner,
+      });
 
+      dispatch(loginSuccess(response.data));
+      dispatch(showMessageWithTimeout("success", true, "account created"));
+      dispatch(appDoneLoading());
+    } catch (error) {
+      if (error.response) {
+        dispatch(setMessage("danger", true, error.response.data.message));
+      } else {
+        dispatch(setMessage("danger", true, error.message));
+      }
+      dispatch(appDoneLoading());
+    }
+  };
+};
 
 export const login = (email, password) => {
   return async (dispatch, getState) => {
