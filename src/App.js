@@ -7,6 +7,7 @@ import Loading from "./components/Loading";
 import MessageBox from "./components/MessageBox";
 
 import Homepage from "./pages/Homepage";
+import BarbershopDetail from "./pages/BarbershopDetail";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 
@@ -29,6 +30,7 @@ function App() {
       {isLoading ? <Loading /> : null}
       <Switch>
         <Route exact path="/" component={Homepage} />
+        <Route exact path="/barbershops/:id" component={BarbershopDetail} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
       </Switch>

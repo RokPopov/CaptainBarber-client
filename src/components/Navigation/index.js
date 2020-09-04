@@ -27,7 +27,7 @@ export default function Navigation() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="navbar navbar-dark" style={{ width: "100%" }} fill>
-          <NavbarItem path="/" linkText="Barbershop Details" />
+          <NavbarItem path="/barbershops/:id" linkText="Barbershop Details" />
           <NavbarItem path="/" linkText="Barbershops Map" />
           {token && user.isOwner === true ? (
             <NavbarItem path="/startAuction" linkText="Start an Auction" />
