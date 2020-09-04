@@ -17,7 +17,20 @@ export default function Homepage() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div
+    style={{
+      textAlign: "center"
+    }}
+    >
+      <span
+        style={{
+          fontWeight: "bold",
+          fontSize: "10rem",
+          border: "1rem solid #000000",
+        }}
+      >
+        CAPTAIN BARBER
+      </span>
       <Container>
         {barbershops.map((barbershop, i) => {
           return (
