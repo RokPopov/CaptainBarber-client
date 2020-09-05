@@ -93,6 +93,7 @@ export default function BarbershopDetail() {
               fontSize: "3rem",
               marginBottom: "2rem",
               borderBottom: "3px solid #fff",
+              boxShadow: "2rem 2rem 5rem #000000",
               textShadow: "3px 3px 5px #000000",
               color: "#fff",
             }}

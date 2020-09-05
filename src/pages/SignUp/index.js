@@ -9,10 +9,13 @@ import { useHistory, Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
 
 export default function SignUp() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [isArtist, setArtist] = useState("");
   const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
+  const [phoneNum, setPhoneNum] = useState("");
+  const [isOwner, setOwner] = useState(false);
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const history = useHistory();
@@ -26,51 +29,87 @@ export default function SignUp() {
   function submitForm(event) {
     event.preventDefault();
 
-    dispatch(signUp(name, email, password, isArtist));
+    dispatch(
+      signUp(email, password, firstName, lastName, address, phoneNum, isOwner)
+    );
 
     setEmail("");
     setPassword("");
-    setName("");
-    setArtist("");
+    setFirstName("");
+    setLastName("");
+    setAddress("");
+    setPhoneNum("");
+    setOwner("");
   }
 
   return (
     <Container>
       <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
-        <h1 className="mt-5 mb-5">Signup</h1>
+        <h1
+          className="mt-5 mb-5"
+          style={{
+            fontSize: "3rem",
+            marginBottom: "2rem",
+            borderBottom: "3px solid #fff",
+            textShadow: "3px 3px 5px #000000",
+          }}
+        >
+          Sign Up
+        </h1>
         <Form.Group controlId="formBasicName">
-          <Form.Label>Name</Form.Label>
+          <Form.Label>First Name</Form.Label>
           <Form.Control
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={firstName}
+            onChange={(event) => setFirstName(event.target.value)}
             type="text"
-            placeholder="Enter name"
+            placeholder="Enter First Name"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="formBasicName">
+          <Form.Label>Last Name</Form.Label>
+          <Form.Control
+            value={lastName}
+            onChange={(event) => setLastName(event.target.value)}
+            type="text"
+            placeholder="Enter Last Name"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="formBasicName">
+          <Form.Label>Address</Form.Label>
+          <Form.Control
+            value={address}
+            onChange={(event) => setAddress(event.target.value)}
+            type="text"
+            placeholder="Enter Address"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="formBasicName">
+          <Form.Label>Phone Number (optional)</Form.Label>
+          <Form.Control
+            value={phoneNum}
+            onChange={(event) => setPhoneNum(event.target.value)}
+            type="text"
+            placeholder="Enter Phone Number (not necessary)"
             required
           />
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             type="email"
-            placeholder="Enter email"
+            placeholder="Enter Email"
             required
           />
           <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
+            You're email is safe with us.
           </Form.Text>
         </Form.Group>
-        <Form.Group controlId="formBasicIsArtist">
-          <input
-            value={!isArtist}
-            onChange={(event) => setArtist(event.target.value)}
-            type="checkbox"
-            placeholder="Artist?"
-            required
-          />{" "}
-          <Form.Label>I declare myself to be an artist</Form.Label>
-        </Form.Group>
+
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
@@ -81,13 +120,42 @@ export default function SignUp() {
             required
           />
         </Form.Group>
-
-        <Form.Group className="mt-5">
-          <Button variant="primary" type="submit" onClick={submitForm}>
-            Sign up
+        <Form.Group controlId="formBasicIsArtist">
+          <input
+            value={!isOwner}
+            onChange={(event) => setOwner(event.target.value)}
+            type="checkbox"
+            placeholder="Barbershop Owner?"
+            required
+          />{" "}
+          <Form.Label>I am a barbershop owner</Form.Label>
+        </Form.Group>
+        <Form.Group>
+          <Button
+            variant="primary"
+            type="submit"
+            onClick={submitForm}
+            style={{
+              backgroundColor: "#495057",
+              borderColor: "#495057",
+              textShadow: "2px 1px  5px #000000",
+              marginRight: "10%",
+            }}
+          >
+            Sign Up
+          </Button>
+          <Button
+            href="/login"
+            style={{
+              backgroundColor: "#495057",
+              borderColor: "#495057",
+              textShadow: "2px 1px  5px #000000",
+              marginRight: "10%",
+            }}
+          >
+            Log In
           </Button>
         </Form.Group>
-        <Link to="/login">Click here to log in</Link>
       </Form>
     </Container>
   );
