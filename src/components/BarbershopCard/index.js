@@ -35,8 +35,9 @@ export default function BarbershopCard(props) {
         <Link to={`/barbershops/${props.id}`} className="link-unstyled">
           <Button
             style={{
-              backgroundColor: "#666666",
-              borderColor: "#666666",
+              backgroundColor: "#495057",
+              borderColor: "#fff",
+              textShadow: "2px 1px  5px #000000",
             }}
           >
             View Barbershop
@@ -48,8 +49,9 @@ export default function BarbershopCard(props) {
           <Button
             className="link-unstyled"
             style={{
-              backgroundColor: "#666666",
-              borderColor: "#666666",
+              backgroundColor: "#495057",
+              borderColor: "#fff",
+              textShadow: "2px 1px  5px #000000",
             }}
           >
             {props.website}
@@ -57,7 +59,8 @@ export default function BarbershopCard(props) {
         </a>
       </p>
       <p>
-        <span style={{ fontSize: "2rem" }}>🤍</span> {props.rate}
+        <span style={{ fontSize: "2rem" }}>🖤</span>{" "}
+        <span style={{ color: "#000000" }}>{props.rate}</span>
       </p>
     </Jumbotron>
   );

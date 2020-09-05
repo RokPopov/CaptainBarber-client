@@ -16,21 +16,33 @@ export default function Navigation() {
   const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
 
   return (
-    <Navbar bg="dark" expand="lg">
-      <Navbar.Brand as={NavLink} to="/">
+    <Navbar
+      bg="dark"
+      expand="lg"
+      style={{ color: "white", textShadow: "2px 2px 3px #000000" }}
+    >
+      <Navbar.Brand as={NavLink} to="/" style={{ width: "30%" }}>
         <Image
           src="https://image.freepik.com/free-vector/vintage-barber-razor_53876-91215.jpg"
+          alt="Razor Logo"
           className="img-thumbnail"
-          style={{ width: "15%", borderRadius: "10%" }}
+          style={{ width: "30%", borderRadius: "10%" }}
         />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="navbar navbar-dark" style={{ width: "100%" }} fill>
+        <Nav
+          justify
+          className="navbar navbar-dark"
+          style={{
+            fontWeight: "bold",
+            fontSize: "1.5rem",
+          }}
+        >
           <NavbarItem path="/barbershops/:id" linkText="Barbershop Details" />
           <NavbarItem path="/" linkText="Barbershops Map" />
           {token && user.isOwner === true ? (
-            <NavbarItem path="/startAuction" linkText="Start an Auction" />
+            <NavbarItem path="/edit" linkText="Add/Edit Barbershop" />
           ) : null}
           {loginLogoutControls}
         </Nav>
