@@ -18,15 +18,17 @@ export default function Homepage() {
 
   return (
     <div
-    style={{
-      textAlign: "center"
-    }}
+      style={{
+        textAlign: "center",
+      }}
     >
       <span
         style={{
+          textShadow: " #000000",
           fontWeight: "bold",
           fontSize: "10rem",
           border: "1rem solid #000000",
+          boxShadow: "2rem 2rem 10rem #000000",
         }}
       >
         CAPTAIN BARBER

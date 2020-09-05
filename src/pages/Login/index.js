@@ -33,7 +33,17 @@ export default function SignUp() {
   return (
     <Container>
       <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
-        <h1 className="mt-5 mb-5">Login</h1>
+        <h1
+          className="mt-5 mb-5"
+          style={{
+            fontSize: "3rem",
+            marginBottom: "2rem",
+            borderBottom: "3px solid #fff",
+            textShadow: "3px 3px 5px #000000",
+          }}
+        >
+          Login
+        </h1>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -67,7 +77,7 @@ export default function SignUp() {
               marginRight: "10%",
             }}
           >
-            Log in
+            Log In
           </Button>
           <Button
             href="/signup"
@@ -78,7 +88,7 @@ export default function SignUp() {
               marginRight: "10%",
             }}
           >
-            Signup
+            Sign Up
           </Button>
         </Form.Group>
       </Form>
