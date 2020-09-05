@@ -13,7 +13,7 @@ export default function BarbershopCard(props) {
         backgroundImage:
           "url('https://images.unsplash.com/photo-1532710093739-9470acff878f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')",
         color: "white",
-        backgroundSize: "100%",
+        backgroundSize: "cover",
         textShadow: "1px 1px #000000",
       }}
     >
