@@ -120,7 +120,7 @@ export default function SignUp() {
             required
           />
         </Form.Group>
-        <Form.Group controlId="formBasicIsArtist">
+        <Form.Group controlId="formBasicIsOwner">
           <input
             value={!isOwner}
             onChange={(event) => setOwner(event.target.value)}

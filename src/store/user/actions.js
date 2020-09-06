@@ -11,7 +11,7 @@ import {
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const TOKEN_STILL_VALID = "TOKEN_STILL_VALID";
 export const LOG_OUT = "LOG_OUT";
-export const AUCTION_POSTED = "AUCTION_POSTED";
+export const BARBERSHOP_ADDED = "BARBERSHOP_ADDED";
 
 const loginSuccess = (userWithToken) => {
   return {
@@ -23,11 +23,6 @@ const loginSuccess = (userWithToken) => {
 const tokenStillValid = (userWithoutToken) => ({
   type: TOKEN_STILL_VALID,
   payload: userWithoutToken,
-});
-
-export const auctionPostSuccess = (auction) => ({
-  type: AUCTION_POSTED,
-  payload: auction,
 });
 
 export const logOut = () => ({ type: LOG_OUT });
@@ -122,17 +117,46 @@ export const getUserWithStoredToken = () => {
   };
 };
 
-export const postAuction = (title, imageUrl, minimumBid) => {
+export const addBarbershopSuccess = (barbershop) => ({
+  type: BARBERSHOP_ADDED,
+  payload: barbershop,
+});
+
+export const addBarbershop = (
+  title,
+  haircut,
+  beardcut,
+  combo,
+  haircutPrice,
+  beardcutPrice,
+  comboPrice,
+  website,
+  email,
+  phoneNum,
+  openingHours,
+  description,
+  image
+) => {
   return async (dispatch, getState) => {
     const { token } = selectUser(getState());
     dispatch(appLoading());
 
     const response = await axios.post(
-      `${apiUrl}/artworks/startAuction`,
+      `${apiUrl}/barbershops/addbarbershop`,
       {
         title,
-        imageUrl,
-        minimumBid,
+        haircut,
+        beardcut,
+        combo,
+        haircutPrice,
+        beardcutPrice,
+        comboPrice,
+        website,
+        email,
+        phoneNum,
+        openingHours,
+        description,
+        image,
       },
       {
         headers: {
@@ -149,7 +173,7 @@ export const postAuction = (title, imageUrl, minimumBid) => {
         3000
       )
     );
-    dispatch(auctionPostSuccess(response.data));
+    dispatch(addBarbershopSuccess(response.data));
     dispatch(appDoneLoading());
   };
 };
