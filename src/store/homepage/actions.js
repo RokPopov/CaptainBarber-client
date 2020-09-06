@@ -1,7 +1,7 @@
 import { apiUrl } from "../../config/constants";
 import Axios from "axios";
 
-const pagination_limit = 10;
+const pagination_limit = 25;
 export const FETCHED_BARBERSHOPS = "FETCHED_BARBERSHOPS";
 
 const fetchedBarbershops = (barbershops) => ({

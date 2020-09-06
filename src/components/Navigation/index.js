@@ -39,10 +39,10 @@ export default function Navigation() {
             fontSize: "1.5rem",
           }}
         >
-          <NavbarItem path="/barbershops/:id" linkText="Barbershop Details" />
+          <NavbarItem path="/" linkText="Homepage" />
           <NavbarItem path="/" linkText="Barbershops Map" />
           {token && user.isOwner === true ? (
-            <NavbarItem path="/edit" linkText="Add/Edit Barbershop" />
+            <NavbarItem path="/addbarbershop" linkText="Add Barbershop" />
           ) : null}
           {loginLogoutControls}
         </Nav>

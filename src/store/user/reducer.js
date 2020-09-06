@@ -2,7 +2,7 @@ import {
   LOG_OUT,
   LOGIN_SUCCESS,
   TOKEN_STILL_VALID,
-  AUCTION_POSTED,
+  BARBERSHOP_ADDED,
 } from "./actions";
 
 const initialState = {
@@ -24,7 +24,7 @@ export default (state = initialState, action) => {
     case TOKEN_STILL_VALID:
       return { ...state, ...action.payload };
 
-    case AUCTION_POSTED:
+    case BARBERSHOP_ADDED:
       return { ...state, ...action.payload };
 
     default:
