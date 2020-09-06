@@ -8,6 +8,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 import { fetchBarbershopDetails } from "../../store/barbershopDetail/actions";
 import { incrementLikes } from "../../store/barbershopDetail/actions";
@@ -216,16 +217,20 @@ export default function BarbershopDetail() {
           Reviews Section
         </h1>
         {review}
-        {/* <h4
-          style={{
-            textShadow: "1px 1px #000000",
-            color: "#fff",
-            marginBottom: "3rem",
-          }}
-        >
-          {" "}
-          Add a review
-        </h4> */}
+
+        <Link to="/review">
+          <Button
+            style={{
+              marginTop: "1rem",
+              backgroundColor: "#000000",
+              borderColor: "#495057",
+              textShadow: "2px 1px  5px #000000",
+            }}
+          >
+            Add a review
+          </Button>
+        </Link>
+
         <h4
           style={{
             textShadow: "2px 1px  5px #000000",
