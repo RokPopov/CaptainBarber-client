@@ -34,28 +34,32 @@ export default function Homepage() {
         CAPTAIN BARBER
       </span>
       <Container>
-        {barbershops.map((barbershop, i) => {
-          return (
-            <BarbershopCard
-              key={i}
-              id={barbershop.id}
-              title={barbershop.title}
-              description={barbershop.description}
-              website={barbershop.website}
-              showLink={true}
-              email={barbershop.email}
-              phoneNum={barbershop.phoneNum}
-              haircut={barbershop.haircut}
-              haircutPrice={barbershop.haircutPrice}
-              beardcut={barbershop.beardcut}
-              beardcutPrice={barbershop.beardcutPrice}
-              combo={barbershop.combo}
-              comboPrice={barbershop.comboPrice}
-              rate={barbershop.rate}
-              openingHours={barbershop.openingHours}
-            />
-          );
-        })}
+        {barbershops
+          .sort(
+            (barbershop1, barbershop2) => barbershop2.rate - barbershop1.rate
+          )
+          .map((barbershop, i) => {
+            return (
+              <BarbershopCard
+                key={i}
+                id={barbershop.id}
+                title={barbershop.title}
+                description={barbershop.description}
+                website={barbershop.website}
+                showLink={true}
+                email={barbershop.email}
+                phoneNum={barbershop.phoneNum}
+                haircut={barbershop.haircut}
+                haircutPrice={barbershop.haircutPrice}
+                beardcut={barbershop.beardcut}
+                beardcutPrice={barbershop.beardcutPrice}
+                combo={barbershop.combo}
+                comboPrice={barbershop.comboPrice}
+                rate={barbershop.rate}
+                openingHours={barbershop.openingHours}
+              />
+            );
+          })}
       </Container>
     </div>
   );
