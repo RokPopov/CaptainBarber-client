@@ -56,7 +56,10 @@ export default function BarbershopDetail() {
                   border: "none",
                 }}
               >
-                User <i>{review.userId}</i> wrote: <i>{review.content}</i>
+                <i>
+                  {review.user.firstName} {review.user.lastName}
+                </i>{" "}
+                wrote: <i>{review.content}</i>
               </Card.Header>
 
               <Card.Footer
