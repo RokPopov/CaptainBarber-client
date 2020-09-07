@@ -39,7 +39,7 @@ export default function SignUp() {
     setLastName("");
     setAddress("");
     setPhoneNum("");
-    setOwner("");
+    setOwner(false);
   }
 
   return (
@@ -134,8 +134,8 @@ export default function SignUp() {
         </Form.Group>
         <Form.Group controlId="formBasicIsOwner">
           <input
-            value={!isOwner}
-            onChange={(event) => setOwner(event.target.value)}
+            checked={isOwner}
+            onChange={(event) => setOwner(event.target.checked)}
             type="checkbox"
             placeholder="Barbershop Owner?"
             required

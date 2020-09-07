@@ -23,6 +23,7 @@ export default function AddBarbershop() {
   const [beardcutPrice, setBeardcutPrice] = useState(0);
   const [combo, setCombo] = useState(false);
   const [comboPrice, setComboPrice] = useState(0);
+  const [address, setAddress] = useState("");
   const [website, setWebsite] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNum, setPhoneNum] = useState("");
@@ -46,26 +47,32 @@ export default function AddBarbershop() {
         phoneNum,
         openingHours,
         description,
-        image
+        image,
+        address
       )
     );
     setTitle("");
-    setHaircut("");
+    setHaircut(false);
     setHaircutPrice("");
     setBeardcutPrice("");
+    setBeardcut(false);
     setComboPrice("");
+    setCombo(false);
     setWebsite("");
     setEmail("");
     setPhoneNum("");
     setOpeningHours("");
     setDescription("");
     setImage("");
+    setAddress("");
   }
 
   if (token === null) {
     history.push("/");
   }
-
+  console.log(haircut, "haricut");
+  console.log(beardcut, "bbeardcut");
+  console.log(combo, "combo");
   return (
     <div>
       <>
@@ -133,8 +140,11 @@ export default function AddBarbershop() {
                 }}
               >
                 <input
-                  value={!haircut}
-                  onChange={(event) => setHaircut(event.target.value)}
+                  checked={haircut}
+                  onChange={(event) => {
+                    console.log("value", event.target.checked);
+                    setHaircut(event.target.checked);
+                  }}
                   type="checkbox"
                   placeholder="Offer haircuts?"
                   required
@@ -170,8 +180,8 @@ export default function AddBarbershop() {
 
               <Form.Group controlId="formBasicBeardcut">
                 <input
-                  value={!beardcut}
-                  onChange={(event) => setBeardcut(event.target.value)}
+                  checked={beardcut}
+                  onChange={(event) => setBeardcut(event.target.checked)}
                   type="checkbox"
                   placeholder="Offer beard shave?"
                   required
@@ -203,8 +213,8 @@ export default function AddBarbershop() {
 
               <Form.Group controlId="formBasicCombo">
                 <input
-                  value={!combo}
-                  onChange={(event) => setCombo(event.target.value)}
+                  checked={combo}
+                  onChange={(event) => setCombo(event.target.checked)}
                   type="checkbox"
                   placeholder="Offer combo service?"
                   required
@@ -228,6 +238,23 @@ export default function AddBarbershop() {
                   type="number"
                   placeholder="Your price of combo service, enter a number"
                   required
+                  style={{
+                    textAlign: "center",
+                  }}
+                />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label>
+                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
+                    Barbershop Address
+                  </h6>
+                </Form.Label>
+                <Form.Control
+                  value={address}
+                  onChange={(event) => setAddress(event.target.value)}
+                  type="text"
+                  placeholder="Naritaweg 10, 1043BX Amsterdam"
                   style={{
                     textAlign: "center",
                   }}

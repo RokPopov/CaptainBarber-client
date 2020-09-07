@@ -62,7 +62,7 @@ export default function BarbershopDetail() {
               <Card.Footer
                 key={i}
                 style={{
-                  border: "none",
+                  borderBottom: "0.5rem solid #fff",
                 }}
               >
                 Posted at: <i>{review.time}</i>
