@@ -135,7 +135,8 @@ export const addBarbershop = (
   phoneNum,
   openingHours,
   description,
-  image
+  image,
+  address
 ) => {
   return async (dispatch, getState) => {
     const { token } = selectUser(getState());
@@ -151,6 +152,7 @@ export const addBarbershop = (
         haircutPrice,
         beardcutPrice,
         comboPrice,
+        address,
         website,
         email,
         phoneNum,
