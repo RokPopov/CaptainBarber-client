@@ -34,7 +34,7 @@ function App() {
         <Route exact path="/" component={Homepage} />
         <Route path="/barbershops/:id" component={BarbershopDetail} />
         <Route path="/addbarbershop" component={AddBarbershop} />
-        <Route path="/review" component={AddReview} />
+        <Route path="/review/:id" component={AddReview} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
       </Switch>

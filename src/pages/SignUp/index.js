@@ -57,7 +57,9 @@ export default function SignUp() {
           Sign Up
         </h1>
         <Form.Group controlId="formBasicName">
-          <Form.Label>First Name</Form.Label>
+          <Form.Label>
+            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>First Name</h6>
+          </Form.Label>
           <Form.Control
             value={firstName}
             onChange={(event) => setFirstName(event.target.value)}
@@ -67,7 +69,9 @@ export default function SignUp() {
           />
         </Form.Group>
         <Form.Group controlId="formBasicName">
-          <Form.Label>Last Name</Form.Label>
+          <Form.Label>
+            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Last Name</h6>
+          </Form.Label>
           <Form.Control
             value={lastName}
             onChange={(event) => setLastName(event.target.value)}
@@ -77,7 +81,9 @@ export default function SignUp() {
           />
         </Form.Group>
         <Form.Group controlId="formBasicName">
-          <Form.Label>Address</Form.Label>
+          <Form.Label>
+            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Address</h6>
+          </Form.Label>
           <Form.Control
             value={address}
             onChange={(event) => setAddress(event.target.value)}
@@ -87,7 +93,9 @@ export default function SignUp() {
           />
         </Form.Group>
         <Form.Group controlId="formBasicName">
-          <Form.Label>Phone Number (optional)</Form.Label>
+          <Form.Label>
+            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Phone Number</h6>
+          </Form.Label>
           <Form.Control
             value={phoneNum}
             onChange={(event) => setPhoneNum(event.target.value)}
@@ -97,7 +105,9 @@ export default function SignUp() {
           />
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
+          <Form.Label>
+            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Email</h6>
+          </Form.Label>
           <Form.Control
             value={email}
             onChange={(event) => setEmail(event.target.value)}
@@ -111,7 +121,9 @@ export default function SignUp() {
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>
+            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Password</h6>
+          </Form.Label>
           <Form.Control
             value={password}
             onChange={(event) => setPassword(event.target.value)}
@@ -128,7 +140,11 @@ export default function SignUp() {
             placeholder="Barbershop Owner?"
             required
           />{" "}
-          <Form.Label>I am a barbershop owner</Form.Label>
+          <Form.Label>
+            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
+              I am a barbershop owner
+            </h6>
+          </Form.Label>
         </Form.Group>
         <Form.Group>
           <Button

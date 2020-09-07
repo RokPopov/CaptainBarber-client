@@ -14,11 +14,13 @@ import { fetchBarbershopDetails } from "../../store/barbershopDetail/actions";
 import { incrementLikes } from "../../store/barbershopDetail/actions";
 
 import { selectBarbershopDetails } from "../../store/barbershopDetail/selectors";
+import { selectUser } from "../../store/user/selectors";
 
 export default function BarbershopDetail() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const barbershopDetails = useSelector(selectBarbershopDetails);
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     if (id !== "0") {
@@ -218,49 +220,53 @@ export default function BarbershopDetail() {
         </h1>
         {review}
 
-        <Link to="/review">
-          <Button
-            style={{
-              marginTop: "1rem",
-              backgroundColor: "#000000",
-              borderColor: "#495057",
-              textShadow: "2px 1px  5px #000000",
-            }}
-          >
-            Add a review
-          </Button>
-        </Link>
-
-        <h4
-          style={{
-            textShadow: "2px 1px  5px #000000",
-            color: "#fff",
-            marginTop: "3rem",
-            marginBottom: "3rem",
-          }}
-        >
-          {" "}
-          Add a like
-          <p>
+        {user.token ? (
+          <Link to={`/review/${id}`}>
             <Button
               style={{
-                backgroundColor: "#495057",
+                marginTop: "1rem",
+                backgroundColor: "#000000",
                 borderColor: "#495057",
                 textShadow: "2px 1px  5px #000000",
               }}
-              onClick={likeBarbershop}
             >
-              <span style={{ fontSize: "2rem" }}>🤍</span>{" "}
+              Add a review
             </Button>
-            <p
-              style={{
-                color: "white",
-              }}
-            >
-              {barbershopDetails.rate}
+          </Link>
+        ) : null}
+
+        {user.token ? (
+          <h4
+            style={{
+              textShadow: "2px 1px  5px #000000",
+              color: "#fff",
+              marginTop: "3rem",
+              marginBottom: "3rem",
+            }}
+          >
+            {" "}
+            Add a like
+            <p>
+              <Button
+                style={{
+                  backgroundColor: "#495057",
+                  borderColor: "#495057",
+                  textShadow: "2px 1px  5px #000000",
+                }}
+                onClick={likeBarbershop}
+              >
+                <span style={{ fontSize: "2rem" }}>🤍</span>{" "}
+              </Button>
+              <p
+                style={{
+                  color: "white",
+                }}
+              >
+                {barbershopDetails.rate}
+              </p>
             </p>
-          </p>
-        </h4>
+          </h4>
+        ) : null}
       </Jumbotron>
     </>
   );

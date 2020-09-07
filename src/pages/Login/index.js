@@ -45,7 +45,9 @@ export default function SignUp() {
           Login
         </h1>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>
+            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Email address</h6>
+          </Form.Label>
           <Form.Control
             value={email}
             onChange={(event) => setEmail(event.target.value)}
@@ -56,7 +58,9 @@ export default function SignUp() {
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>
+            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Password</h6>
+          </Form.Label>
           <Form.Control
             value={password}
             onChange={(event) => setPassword(event.target.value)}
