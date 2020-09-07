@@ -12,6 +12,7 @@ import AddBarbershop from "./pages/AddBarbershop";
 import AddReview from "./pages/AddReview";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
+import Footer from "./components/Footer";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
@@ -38,6 +39,7 @@ function App() {
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
       </Switch>
+      <Footer />
     </div>
   );
 }

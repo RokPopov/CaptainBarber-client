@@ -45,7 +45,7 @@ export default function BarbershopCard(props) {
         </Link>
       </p>
       <p>
-        <a className="link-unstyled" href={props.website}>
+        <a className="link-unstyled" href={props.website} target="_blank">
           <Button
             className="link-unstyled"
             style={{
