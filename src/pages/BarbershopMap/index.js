@@ -57,7 +57,13 @@ export default function BarbershopMap() {
                 }}
               >
                 <Link to={`/barbershops/${location.barbershopId}`}>
-                  <h3>{location.address}</h3>
+                  <h5
+                    style={{
+                      color: "#fff",
+                    }}
+                  >
+                    {location.address}
+                  </h5>
                 </Link>
               </Popup>
             </Marker>
