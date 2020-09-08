@@ -18,11 +18,8 @@ export default function BarbershopMap() {
   });
 
   useEffect(() => {
-    console.log("fetchBarbershopsLocations");
     dispatch(fetchBarbershopsLocations());
   }, [dispatch]);
-  console.log("locations", locations);
-  console.log("zero", locations[0]);
 
   return (
     <div>
@@ -49,7 +46,6 @@ export default function BarbershopMap() {
               key={location.id}
               position={[location.latitude, location.longitude]}
               onClick={() => {
-                console.log("do you fire");
                 setActiveBarbershop(location);
               }}
             >

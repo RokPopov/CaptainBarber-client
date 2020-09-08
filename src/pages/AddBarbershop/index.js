@@ -76,11 +76,7 @@ export default function AddBarbershop() {
   if (token === null) {
     history.push("/");
   }
-  console.log(haircut, "haricut");
-  console.log(beardcut, "bbeardcut");
-  console.log(combo, "combo");
-  console.log("latitude", latitude);
-  console.log("longitude", longitude);
+
   return (
     <div>
       <>
@@ -150,7 +146,6 @@ export default function AddBarbershop() {
                 <input
                   checked={haircut}
                   onChange={(event) => {
-                    console.log("value", event.target.checked);
                     setHaircut(event.target.checked);
                   }}
                   type="checkbox"
