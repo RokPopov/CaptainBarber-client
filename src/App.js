@@ -13,6 +13,7 @@ import AddReview from "./pages/AddReview";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Footer from "./components/Footer";
+import BarbershopMap from "./pages/BarbershopMap";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
@@ -35,6 +36,7 @@ function App() {
         <Route exact path="/" component={Homepage} />
         <Route path="/barbershops/:id" component={BarbershopDetail} />
         <Route path="/addbarbershop" component={AddBarbershop} />
+        <Route path="/map" component={BarbershopMap} />
         <Route path="/review/:id" component={AddReview} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />

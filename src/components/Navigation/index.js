@@ -40,7 +40,7 @@ export default function Navigation() {
           }}
         >
           <NavbarItem path="/" linkText="Amsterdam Barbershops" />
-          <NavbarItem path="/" linkText="Barbershops Map" />
+          <NavbarItem path="/map" linkText="Barbershops Map" />
           {token && user.isOwner === true ? (
             <NavbarItem path="/addbarbershop" linkText="Add New Barbershop" />
           ) : null}

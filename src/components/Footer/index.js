@@ -8,6 +8,29 @@ export default function Footer() {
   return (
     <>
       <Row
+        style={{
+          backgroundColor: "#495057",
+          color: "#fff",
+          textShadow: "1px 1px 3px #000000",
+        }}
+      >
+        <Col
+          style={{
+            textAlign: "center",
+          }}
+        >
+          <p
+            style={{
+              marginTop: "1rem",
+            }}
+          >
+            ©2020
+          </p>
+          <p>Created as a Portfolio Project by Rok Popov Ledinski</p>
+          <p>rokpopov90@gmail.com</p>
+        </Col>
+      </Row>
+      <Row
         className="justify-content-center"
         style={{
           backgroundColor: "#fff",
@@ -57,29 +80,6 @@ export default function Footer() {
               }}
             />
           </a>
-        </Col>
-      </Row>
-      <Row
-        style={{
-          backgroundColor: "#495057",
-          color: "#fff",
-          //textShadow: "1px 1px 3px #000000",
-        }}
-      >
-        <Col
-          style={{
-            textAlign: "center",
-          }}
-        >
-          <p
-            style={{
-              marginTop: "1rem",
-            }}
-          >
-            ©2020
-          </p>
-          <p>Created as a Portfolio Project by Rok Popov Ledinski</p>
-          <p>rokpopov90@gmail.com</p>
         </Col>
       </Row>
     </>
