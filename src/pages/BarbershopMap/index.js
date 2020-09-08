@@ -49,25 +49,22 @@ export default function BarbershopMap() {
               key={location.id}
               position={[location.latitude, location.longitude]}
               onClick={() => {
+                console.log("do you fire");
                 setActiveBarbershop(location);
               }}
-            />
-          ))}
-        {activeBarbershop &&
-          locations.map((location) => (
-            <Popup
-              key={location.id}
-              position={[location.latitude, location.longitude]}
-              onClose={() => {
-                setActiveBarbershop(null);
-              }}
             >
-              <div>
-                <link href={`/barbershops/${location.barbershopId}`}>
+              <Popup
+                key={location.id}
+                position={[location.latitude, location.longitude]}
+                onClose={() => {
+                  setActiveBarbershop(null);
+                }}
+              >
+                <Link to={`/barbershops/${location.barbershopId}`}>
                   <h3>{location.address}</h3>
-                </link>
-              </div>
-            </Popup>
+                </Link>
+              </Popup>
+            </Marker>
           ))}
       </Map>
     </div>
