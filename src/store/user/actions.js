@@ -136,7 +136,9 @@ export const addBarbershop = (
   openingHours,
   description,
   image,
-  address
+  address,
+  longitude,
+  latitude
 ) => {
   return async (dispatch, getState) => {
     const { token } = selectUser(getState());
@@ -153,6 +155,8 @@ export const addBarbershop = (
         beardcutPrice,
         comboPrice,
         address,
+        longitude,
+        latitude,
         website,
         email,
         phoneNum,

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Container from "react-bootstrap/Container";
+import { Link } from "react-router-dom";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
 import "./style.css";
@@ -12,12 +12,13 @@ export default function BarbershopMap() {
   const dispatch = useDispatch();
   const locations = useSelector(selectLocations);
   const [activeBarbershop, setActiveBarbershop] = useState(null);
-  const skater = new Icon({
-    iconUrl: "https://image.flaticon.com/icons/svg/2821/2821012.svg",
+  const razor = new Icon({
+    iconUrl: "https://image.flaticon.com/icons/svg/484/484167.svg",
     iconSize: [25, 25],
   });
 
   useEffect(() => {
+    console.log("fetchBarbershopsLocations");
     dispatch(fetchBarbershopsLocations());
   }, [dispatch]);
   console.log("locations", locations);
@@ -44,7 +45,7 @@ export default function BarbershopMap() {
         {locations &&
           locations.map((location) => (
             <Marker
-              icon={skater}
+              icon={razor}
               key={location.id}
               position={[location.latitude, location.longitude]}
               onClick={() => {
@@ -57,8 +58,15 @@ export default function BarbershopMap() {
             <Popup
               key={location.id}
               position={[location.latitude, location.longitude]}
+              onClose={() => {
+                setActiveBarbershop(null);
+              }}
             >
-              <div>{location.address}</div>
+              <div>
+                <link href={`/barbershops/${location.barbershopId}`}>
+                  <h3>{location.address}</h3>
+                </link>
+              </div>
             </Popup>
           ))}
       </Map>
