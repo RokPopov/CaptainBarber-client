@@ -29,7 +29,6 @@ export default function BarbershopDetail() {
   }, [dispatch, id]);
 
   const { locations } = barbershopDetails;
-  console.log(locations, "locations");
 
   const address =
     locations &&
@@ -75,8 +74,6 @@ export default function BarbershopDetail() {
         })
         .sort((rev1, rev2) => rev2.time - rev1.time);
     });
-
-  console.log("reviews", review);
 
   const likeBarbershop = () => {
     dispatch(incrementLikes(id));
