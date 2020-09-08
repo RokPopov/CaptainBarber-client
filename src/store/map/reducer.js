@@ -9,6 +9,7 @@ export default (oldState = initialState, { type, payload }) => {
     case FETCHED_BARBERSHOPS_LOCATIONS:
       console.log("locations payload", payload);
       const oldLocations = oldState.locations;
+      console.log(oldLocations, "old ones");
       const mergedLocations = [...oldLocations, ...payload];
       const newState = { ...oldState, locations: mergedLocations };
       return newState;

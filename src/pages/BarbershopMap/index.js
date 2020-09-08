@@ -18,6 +18,7 @@ export default function BarbershopMap() {
   });
 
   useEffect(() => {
+    console.log("fetchBarbershopsLocations");
     dispatch(fetchBarbershopsLocations());
   }, [dispatch]);
   console.log("locations", locations);
