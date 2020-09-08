@@ -4,12 +4,16 @@ const initialState = {
   locations: [],
 };
 
-export default (state = initialState, { type, payload }) => {
+export default (oldState = initialState, { type, payload }) => {
   switch (type) {
     case FETCHED_BARBERSHOPS_LOCATIONS:
-      return { ...state, locations: payload };
+      console.log("locations payload", payload);
+      const oldLocations = oldState.locations;
+      const mergedLocations = [...oldLocations, ...payload];
+      const newState = { ...oldState, locations: mergedLocations };
+      return newState;
 
     default:
-      return state;
+      return oldState;
   }
 };

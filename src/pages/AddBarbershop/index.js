@@ -24,6 +24,8 @@ export default function AddBarbershop() {
   const [combo, setCombo] = useState(false);
   const [comboPrice, setComboPrice] = useState(0);
   const [address, setAddress] = useState("");
+  const [latitude, setLatitude] = useState(0);
+  const [longitude, setLongitude] = useState(0);
   const [website, setWebsite] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNum, setPhoneNum] = useState("");
@@ -48,7 +50,9 @@ export default function AddBarbershop() {
         openingHours,
         description,
         image,
-        address
+        address,
+        longitude,
+        latitude
       )
     );
     setTitle("");
@@ -65,6 +69,8 @@ export default function AddBarbershop() {
     setDescription("");
     setImage("");
     setAddress("");
+    setLongitude(0);
+    setLatitude(0);
   }
 
   if (token === null) {
@@ -73,6 +79,8 @@ export default function AddBarbershop() {
   console.log(haircut, "haricut");
   console.log(beardcut, "bbeardcut");
   console.log(combo, "combo");
+  console.log("latitude", latitude);
+  console.log("longitude", longitude);
   return (
     <div>
       <>
@@ -255,6 +263,44 @@ export default function AddBarbershop() {
                   onChange={(event) => setAddress(event.target.value)}
                   type="text"
                   placeholder="Naritaweg 10, 1043BX Amsterdam"
+                  style={{
+                    textAlign: "center",
+                  }}
+                />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label>
+                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
+                    Longitude
+                  </h6>
+                </Form.Label>
+                <Form.Control
+                  value={longitude}
+                  onChange={(event) => setLongitude(event.target.value)}
+                  type="number"
+                  step="any"
+                  placeholder="52.379189"
+                  required
+                  style={{
+                    textAlign: "center",
+                  }}
+                />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label>
+                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
+                    Latitude
+                  </h6>
+                </Form.Label>
+                <Form.Control
+                  value={latitude}
+                  onChange={(event) => setLatitude(event.target.value)}
+                  type="number"
+                  step="any"
+                  placeholder="4.899431"
+                  required
                   style={{
                     textAlign: "center",
                   }}

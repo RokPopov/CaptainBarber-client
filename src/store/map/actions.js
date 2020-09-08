@@ -12,7 +12,7 @@ export const fetchBarbershopsLocations = () => {
   return async (dispatch, getState) => {
     const barbershops = getState().barbershops.length;
     const response = await Axios.get(`${apiUrl}/map?offset=${barbershops}`);
-    console.log("give me response", response);
+    console.log("fetch me locations response", response);
     dispatch(fetchedBarbershopsLocations(response.data));
   };
 };

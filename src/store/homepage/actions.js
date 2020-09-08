@@ -15,7 +15,7 @@ export const fetchBarbershops = () => {
     const response = await Axios.get(
       `${apiUrl}/barbershops?limit=${pagination_limit}&&offset=${barbershops}`
     );
-    console.log("give me response", response);
+    console.log("fetch barbershops response", response);
     dispatch(fetchedBarbershops(response.data));
   };
 };
