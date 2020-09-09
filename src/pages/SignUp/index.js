@@ -51,14 +51,20 @@ export default function SignUp() {
             fontSize: "3rem",
             marginBottom: "2rem",
             borderBottom: "3px solid #fff",
-            textShadow: "3px 3px 5px #000000",
+            textAlign: "center",
           }}
         >
           Sign Up
         </h1>
-        <Form.Group controlId="formBasicName">
+
+        <Form.Group
+          controlId="formBasicName"
+          style={{
+            textAlign: "center",
+          }}
+        >
           <Form.Label>
-            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>First Name</h6>
+            <h5>First Name</h5>
           </Form.Label>
           <Form.Control
             value={firstName}
@@ -66,11 +72,20 @@ export default function SignUp() {
             type="text"
             placeholder="Enter First Name"
             required
+            style={{
+              textAlign: "center",
+            }}
           />
         </Form.Group>
-        <Form.Group controlId="formBasicName">
+
+        <Form.Group
+          controlId="formBasicName"
+          style={{
+            textAlign: "center",
+          }}
+        >
           <Form.Label>
-            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Last Name</h6>
+            <h5>Last Name</h5>
           </Form.Label>
           <Form.Control
             value={lastName}
@@ -78,11 +93,19 @@ export default function SignUp() {
             type="text"
             placeholder="Enter Last Name"
             required
+            style={{
+              textAlign: "center",
+            }}
           />
         </Form.Group>
-        <Form.Group controlId="formBasicName">
+        <Form.Group
+          controlId="formBasicName"
+          style={{
+            textAlign: "center",
+          }}
+        >
           <Form.Label>
-            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Address</h6>
+            <h5>Address</h5>
           </Form.Label>
           <Form.Control
             value={address}
@@ -90,11 +113,19 @@ export default function SignUp() {
             type="text"
             placeholder="Enter Address"
             required
+            style={{
+              textAlign: "center",
+            }}
           />
         </Form.Group>
-        <Form.Group controlId="formBasicName">
+        <Form.Group
+          controlId="formBasicName"
+          style={{
+            textAlign: "center",
+          }}
+        >
           <Form.Label>
-            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Phone Number</h6>
+            <h5>Phone Number</h5>
           </Form.Label>
           <Form.Control
             value={phoneNum}
@@ -102,11 +133,19 @@ export default function SignUp() {
             type="text"
             placeholder="Enter Phone Number (not necessary)"
             required
+            style={{
+              textAlign: "center",
+            }}
           />
         </Form.Group>
-        <Form.Group controlId="formBasicEmail">
+        <Form.Group
+          controlId="formBasicEmail"
+          style={{
+            textAlign: "center",
+          }}
+        >
           <Form.Label>
-            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Email</h6>
+            <h5>Email</h5>
           </Form.Label>
           <Form.Control
             value={email}
@@ -114,15 +153,23 @@ export default function SignUp() {
             type="email"
             placeholder="Enter Email"
             required
+            style={{
+              textAlign: "center",
+            }}
           />
           <Form.Text className="text-muted">
             You're email is safe with us.
           </Form.Text>
         </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
+        <Form.Group
+          controlId="formBasicPassword"
+          style={{
+            textAlign: "center",
+          }}
+        >
           <Form.Label>
-            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Password</h6>
+            <h5>Password</h5>
           </Form.Label>
           <Form.Control
             value={password}
@@ -130,9 +177,17 @@ export default function SignUp() {
             type="password"
             placeholder="Password"
             required
+            style={{
+              textAlign: "center",
+            }}
           />
         </Form.Group>
-        <Form.Group controlId="formBasicIsOwner">
+        <Form.Group
+          controlId="formBasicIsOwner"
+          style={{
+            textAlign: "center",
+          }}
+        >
           <input
             checked={isOwner}
             onChange={(event) => setOwner(event.target.checked)}
@@ -141,12 +196,14 @@ export default function SignUp() {
             required
           />{" "}
           <Form.Label>
-            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-              I am a barbershop owner
-            </h6>
+            <h5>I am a barbershop owner</h5>
           </Form.Label>
         </Form.Group>
-        <Form.Group>
+        <Form.Group
+          style={{
+            textAlign: "center",
+          }}
+        >
           <Button
             variant="primary"
             type="submit"
