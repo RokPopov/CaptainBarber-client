@@ -39,7 +39,7 @@ This is the frontend of the project, where I am trying to:
 
 ## App Demo
 
-![alt text](https://imgur.com/TeeZlD3)
+![Captain Barber Demo](CaptainBarberAppDemo.gif)
 
 ## Database Diagram
 
