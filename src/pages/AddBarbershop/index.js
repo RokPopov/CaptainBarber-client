@@ -86,7 +86,7 @@ export default function AddBarbershop() {
             style={{
               fontSize: "3rem",
               marginBottom: "2rem",
-              textShadow: "3px 3px 5px #000000",
+
               textAlign: "center",
             }}
           >
@@ -106,25 +106,23 @@ export default function AddBarbershop() {
                 textAlign: "center",
               }}
             >
-              <h4
+              <h3
                 style={{
                   marginBottom: "2rem",
-                  textShadow: "3px 3px 5px #000000",
+
                   textAlign: "center",
                 }}
               >
                 Fill in all the required fields in order to create a new
                 barbershop
-              </h4>
+              </h3>
               <Form.Group
                 style={{
                   textAlign: "center",
                 }}
               >
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Barbershop Title
-                  </h6>
+                  <h5>Barbershop Title</h5>
                 </Form.Label>
                 <Form.Control
                   style={{
@@ -153,9 +151,7 @@ export default function AddBarbershop() {
                   required
                 />{" "}
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    I offer haircut service
-                  </h6>
+                  <h5>I offer haircut service</h5>
                 </Form.Label>
               </Form.Group>
 
@@ -165,9 +161,7 @@ export default function AddBarbershop() {
                 }}
               >
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Price of haircut
-                  </h6>
+                  <h5>Price of haircut</h5>
                 </Form.Label>
                 <Form.Control
                   value={haircutPrice}
@@ -190,17 +184,13 @@ export default function AddBarbershop() {
                   required
                 />{" "}
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    I offer beard shave
-                  </h6>
+                  <h5>I offer beard shave</h5>
                 </Form.Label>
               </Form.Group>
 
               <Form.Group>
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Price of beard shave
-                  </h6>
+                  <h5>Price of beard shave</h5>
                 </Form.Label>
                 <Form.Control
                   value={beardcutPrice}
@@ -223,17 +213,13 @@ export default function AddBarbershop() {
                   required
                 />{" "}
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    I offer haircut and beard shave
-                  </h6>
+                  <h5>I offer haircut and beard shave</h5>
                 </Form.Label>
               </Form.Group>
 
               <Form.Group>
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Price of combo service
-                  </h6>
+                  <h5>Price of combo service</h5>
                 </Form.Label>
                 <Form.Control
                   value={comboPrice}
@@ -249,9 +235,7 @@ export default function AddBarbershop() {
 
               <Form.Group>
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Barbershop Address
-                  </h6>
+                  <h5>Barbershop Address</h5>
                 </Form.Label>
                 <Form.Control
                   value={address}
@@ -266,9 +250,7 @@ export default function AddBarbershop() {
 
               <Form.Group>
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Longitude
-                  </h6>
+                  <h5>Longitude</h5>
                 </Form.Label>
                 <Form.Control
                   value={longitude}
@@ -285,9 +267,7 @@ export default function AddBarbershop() {
 
               <Form.Group>
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Latitude
-                  </h6>
+                  <h5>Latitude</h5>
                 </Form.Label>
                 <Form.Control
                   value={latitude}
@@ -304,9 +284,7 @@ export default function AddBarbershop() {
 
               <Form.Group>
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Barbershop Website
-                  </h6>
+                  <h5>Barbershop Website</h5>
                 </Form.Label>
                 <Form.Control
                   value={website}
@@ -321,9 +299,7 @@ export default function AddBarbershop() {
 
               <Form.Group>
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Barbershop Email
-                  </h6>
+                  <h5>Barbershop Email</h5>
                 </Form.Label>
                 <Form.Control
                   value={email}
@@ -338,9 +314,7 @@ export default function AddBarbershop() {
 
               <Form.Group>
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Barbershop Phone Number
-                  </h6>
+                  <h5>Barbershop Phone Number</h5>
                 </Form.Label>
                 <Form.Control
                   value={phoneNum}
@@ -355,9 +329,7 @@ export default function AddBarbershop() {
 
               <Form.Group>
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Barbershop Opening Hours
-                  </h6>
+                  <h5>Barbershop Opening Hours</h5>
                 </Form.Label>
                 <Form.Control
                   value={openingHours}
@@ -372,9 +344,7 @@ export default function AddBarbershop() {
 
               <Form.Group>
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>
-                    Barbershop Description
-                  </h6>
+                  <h5>Barbershop Description</h5>
                 </Form.Label>
                 <Form.Control
                   value={description}
@@ -389,7 +359,7 @@ export default function AddBarbershop() {
 
               <Form.Group>
                 <Form.Label>
-                  <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Image</h6>
+                  <h5>Image</h5>
                 </Form.Label>
                 <Form.Control
                   value={image}

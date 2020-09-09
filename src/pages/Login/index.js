@@ -32,21 +32,26 @@ export default function SignUp() {
 
   return (
     <Container>
-      <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
+      <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5 mb-5">
         <h1
           className="mt-5 mb-5"
           style={{
             fontSize: "3rem",
             marginBottom: "2rem",
             borderBottom: "3px solid #fff",
-            textShadow: "3px 3px 5px #000000",
+            textAlign: "center",
           }}
         >
           Login
         </h1>
-        <Form.Group controlId="formBasicEmail">
+        <Form.Group
+          controlId="formBasicEmail"
+          style={{
+            textAlign: "center",
+          }}
+        >
           <Form.Label>
-            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Email address</h6>
+            <h5>Email address</h5>
           </Form.Label>
           <Form.Control
             value={email}
@@ -54,12 +59,20 @@ export default function SignUp() {
             type="email"
             placeholder="Enter email"
             required
+            style={{
+              textAlign: "center",
+            }}
           />
         </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
+        <Form.Group
+          controlId="formBasicPassword"
+          style={{
+            textAlign: "center",
+          }}
+        >
           <Form.Label>
-            <h6 style={{ textShadow: "3px 3px 5px #000000" }}>Password</h6>
+            <h5>Password</h5>
           </Form.Label>
           <Form.Control
             value={password}
@@ -67,9 +80,17 @@ export default function SignUp() {
             type="password"
             placeholder="Password"
             required
+            style={{
+              textAlign: "center",
+            }}
           />
         </Form.Group>
-        <Form.Group className="mt-5">
+        <Form.Group
+          className="mt-5"
+          style={{
+            textAlign: "center",
+          }}
+        >
           <Button
             variant="primary"
             type="submit"

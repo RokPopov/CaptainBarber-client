@@ -28,7 +28,7 @@ export default function BarbershopMap() {
         style={{
           fontSize: "3rem",
           marginBottom: "2rem",
-          textShadow: "3px 3px 5px #000000",
+         
           textAlign: "center",
         }}
       >
