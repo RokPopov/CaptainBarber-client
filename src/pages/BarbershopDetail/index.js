@@ -129,7 +129,11 @@ export default function BarbershopDetail() {
                   <i>No email provided</i>
                 )}
               </ListGroup.Item>
-              <ListGroup.Item>{barbershopDetails.website}</ListGroup.Item>
+              <ListGroup.Item>
+                <a href={barbershopDetails.website} style={{ color: "#000" }}>
+                  {barbershopDetails.website}
+                </a>
+              </ListGroup.Item>
             </ListGroup>
           </Col>
           <Col variant="flush">
