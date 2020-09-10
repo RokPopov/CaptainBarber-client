@@ -22,7 +22,6 @@ export default function SignUp() {
   }, [token, history]);
 
   function submitForm(event) {
-    console.log("hi");
     event.preventDefault();
 
     dispatch(login(email, password));
@@ -33,37 +32,90 @@ export default function SignUp() {
 
   return (
     <Container>
-      <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
-        <h1 className="mt-5 mb-5">Login</h1>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+      <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5 mb-5">
+        <h1
+          className="mt-5 mb-5"
+          style={{
+            fontSize: "3rem",
+            marginBottom: "2rem",
+            borderBottom: "3px solid #fff",
+            textAlign: "center",
+          }}
+        >
+          Login
+        </h1>
+        <Form.Group
+          controlId="formBasicEmail"
+          style={{
+            textAlign: "center",
+          }}
+        >
+          <Form.Label>
+            <h5>Email address</h5>
+          </Form.Label>
           <Form.Control
             value={email}
-            onChange={event => setEmail(event.target.value)}
+            onChange={(event) => setEmail(event.target.value)}
             type="email"
             placeholder="Enter email"
             required
+            style={{
+              textAlign: "center",
+            }}
           />
         </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+        <Form.Group
+          controlId="formBasicPassword"
+          style={{
+            textAlign: "center",
+          }}
+        >
+          <Form.Label>
+            <h5>Password</h5>
+          </Form.Label>
           <Form.Control
             value={password}
-            onChange={event => setPassword(event.target.value)}
+            onChange={(event) => setPassword(event.target.value)}
             type="password"
             placeholder="Password"
             required
+            style={{
+              textAlign: "center",
+            }}
           />
         </Form.Group>
-        <Form.Group className="mt-5">
-          <Button variant="primary" type="submit" onClick={submitForm}>
-            Log in
+        <Form.Group
+          className="mt-5"
+          style={{
+            textAlign: "center",
+          }}
+        >
+          <Button
+            variant="primary"
+            type="submit"
+            onClick={submitForm}
+            style={{
+              backgroundColor: "#495057",
+              borderColor: "#495057",
+              textShadow: "2px 1px  5px #000000",
+              marginRight: "10%",
+            }}
+          >
+            Log In
+          </Button>
+          <Button
+            href="/signup"
+            style={{
+              backgroundColor: "#495057",
+              borderColor: "#495057",
+              textShadow: "2px 1px  5px #000000",
+              marginRight: "10%",
+            }}
+          >
+            Sign Up
           </Button>
         </Form.Group>
-        <Link to="/signup" style={{ textAlign: "center" }}>
-          Click here to sign up
-        </Link>
       </Form>
     </Container>
   );

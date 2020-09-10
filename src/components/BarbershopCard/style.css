@@ -1,0 +1,15 @@
+.link-unstyled {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.bcTitle {
+  border-bottom: 3px solid #dddada;
+}
+
+.description {
+  max-height: 40%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
