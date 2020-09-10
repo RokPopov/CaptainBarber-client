@@ -13,7 +13,7 @@ import { selectUser } from "../../store/user/selectors";
 import { addBarbershop } from "../../store/user/actions";
 
 export default function AddBarbershop() {
-  const { token, id } = useSelector(selectUser);
+  const { token } = useSelector(selectUser);
   const history = useHistory();
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");

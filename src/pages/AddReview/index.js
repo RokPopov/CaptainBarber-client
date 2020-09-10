@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
@@ -7,12 +7,9 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
-import { selectBarbershopDetails } from "../../store/barbershopDetail/selectors";
-
 import { postReview } from "../../store/barbershopDetail/actions";
 
 export default function AddReview() {
-  const barbershopDetails = useSelector(selectBarbershopDetails);
   const dispatch = useDispatch();
   const { id } = useParams();
   const [content, setContent] = useState("");

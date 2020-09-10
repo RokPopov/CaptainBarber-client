@@ -145,7 +145,13 @@ export default function BarbershopDetail() {
                 )}
               </ListGroup.Item>
               <ListGroup.Item>
-                <a href={barbershopDetails.website} style={{ color: "#000" }}>
+                <a
+                  href={barbershopDetails.website}
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                  style={{ color: "#000" }}
+                >
                   {barbershopDetails.website}
                 </a>
               </ListGroup.Item>

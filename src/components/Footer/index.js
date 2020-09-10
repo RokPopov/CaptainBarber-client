@@ -2,7 +2,6 @@ import React from "react";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
 
 export default function Footer() {
   return (
@@ -45,6 +44,8 @@ export default function Footer() {
           <a
             href="https://www.linkedin.com/in/rok-popov-ledinski-899154199/"
             target="_blank"
+            without
+            rel="noopener noreferrer"
             style={{
               boxShadow: "0.5rem 2rem 2rem #000000",
             }}
@@ -67,6 +68,8 @@ export default function Footer() {
           <a
             href="https://github.com/RokPopov"
             target="_blank"
+            without
+            rel="noopener noreferrer"
             style={{
               boxShadow: "0.5rem 2rem 2rem #000000",
             }}
