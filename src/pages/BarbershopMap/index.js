@@ -33,6 +33,7 @@ export default function BarbershopMap() {
         }}
       >
         Map of Amsterdam's Barbershops
+        
       </h1>
       <Map center={[52.377956, 4.89707]} zoom={12}>
         <TileLayer
@@ -41,6 +42,7 @@ export default function BarbershopMap() {
         />
         {locations &&
           locations.map((location) => (
+            
             <Marker
               icon={razor}
               key={location.id}
