@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import Moment from "react-moment";
+import "moment-timezone";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
@@ -55,10 +57,16 @@ export default function BarbershopDetail() {
                   border: "none",
                 }}
               >
-                <i>
-                  {review.user.firstName} {review.user.lastName}
-                </i>{" "}
-                wrote: <i>{review.content}</i>
+                <h6
+                  style={{
+                    color: "#000",
+                    textShadow: "none",
+                  }}
+                >
+                  {" "}
+                  {review.user.firstName} {review.user.lastName} wrote
+                </h6>{" "}
+                <i>{review.content}</i>
               </Card.Header>
 
               <Card.Footer
@@ -67,7 +75,14 @@ export default function BarbershopDetail() {
                   borderBottom: "0.5rem solid #fff",
                 }}
               >
-                Posted at: <i>{review.time}</i>
+                <h6
+                  style={{
+                    color: "#000",
+                    textShadow: "none",
+                  }}
+                >
+                  Posted at <Moment>{review.time}</Moment>
+                </h6>
               </Card.Footer>
             </Card>
           );
