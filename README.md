@@ -68,6 +68,7 @@ This is the frontend of the project, where I am trying to:
 - Axios
 - Html, JSX
 - CSS, React Bootstrap
+- Moment, React-Moment, Moment-Timezone
 
 ## Git Version Control
 
