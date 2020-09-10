@@ -7,6 +7,7 @@ Captain Barber is a portfolio project where you can search for barbershops in Am
 - **[Goals for this Project](#goals-for-this-project)**
 - **[User Stories](#user-stories)**
 - **[App Demo](#app-demo)**
+- **[Working Version](#working-version)**
 - **[Database Diagram](#database-diagram)**
 - **[Project-Board](#kanban-task-board)**
 - **[Backend](#backend)**
@@ -40,6 +41,10 @@ This is the frontend of the project, where I am trying to:
 ## App Demo
 
 ![Captain Barber Demo](CaptainBarberAppDemo.gif)
+
+## Working Version
+
+[Link to Captain Barber](https://captainbarber.netlify.app/)
 
 ## Database Diagram
 
