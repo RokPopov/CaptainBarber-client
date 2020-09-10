@@ -45,7 +45,12 @@ export default function BarbershopCard(props) {
         </Link>
       </p>
       <p>
-        <a className="link-unstyled" href={props.website} target="_blank">
+        <a
+          className="link-unstyled"
+          href={props.website}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Button
             className="link-unstyled"
             style={{
@@ -59,7 +64,13 @@ export default function BarbershopCard(props) {
         </a>
       </p>
       <p>
-        <span style={{ fontSize: "2rem" }}>🖤</span>{" "}
+        <span
+          style={{ fontSize: "2rem" }}
+          role="img"
+          aria-labelledby=":black_heart:"
+        >
+          🖤
+        </span>{" "}
         <span style={{ color: "#000000" }}>{props.rate}</span>
       </p>
     </Jumbotron>
