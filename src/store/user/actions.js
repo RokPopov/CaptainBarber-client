@@ -143,43 +143,51 @@ export const addBarbershop = (
   return async (dispatch, getState) => {
     const { token } = selectUser(getState());
     dispatch(appLoading());
-
-    const response = await axios.post(
-      `${apiUrl}/barbershops/addbarbershop`,
-      {
-        title,
-        haircut,
-        beardcut,
-        combo,
-        haircutPrice,
-        beardcutPrice,
-        comboPrice,
-        address,
-        longitude,
-        latitude,
-        website,
-        email,
-        phoneNum,
-        openingHours,
-        description,
-        image,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+    try {
+      const response = await axios.post(
+        `${apiUrl}/barbershops/addbarbershop`,
+        {
+          title,
+          haircut,
+          beardcut,
+          combo,
+          haircutPrice,
+          beardcutPrice,
+          comboPrice,
+          address,
+          longitude,
+          latitude,
+          website,
+          email,
+          phoneNum,
+          openingHours,
+          description,
+          image,
         },
-      }
-    );
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
-    dispatch(
-      showMessageWithTimeout(
-        "success",
-        false,
-        "You have been successful!",
-        3000
-      )
-    );
-    dispatch(addBarbershopSuccess(response.data));
-    dispatch(appDoneLoading());
+      dispatch(
+        showMessageWithTimeout(
+          "success",
+          false,
+          "You have been successful!",
+          3000
+        )
+      );
+      dispatch(addBarbershopSuccess(response.data));
+      dispatch(appDoneLoading());
+    } catch (error) {
+      if (error.response) {
+        dispatch(setMessage("danger", true, error.response.data.message));
+      } else {
+        dispatch(setMessage("danger", true, error.message));
+      }
+      dispatch(appDoneLoading());
+    }
   };
 };
