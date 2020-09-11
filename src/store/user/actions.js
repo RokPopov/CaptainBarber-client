@@ -182,11 +182,8 @@ export const addBarbershop = (
       dispatch(addBarbershopSuccess(response.data));
       dispatch(appDoneLoading());
     } catch (error) {
-      if (error.response) {
-        dispatch(setMessage("danger", true, error.response.data.message));
-      } else {
-        dispatch(setMessage("danger", true, error.message));
-      }
+      console.log(error);
+      dispatch(setMessage("error", true, "Fill in all the fields"));
       dispatch(appDoneLoading());
     }
   };
